@@ -4,7 +4,3 @@
    ((+ (car L) (sum-up-numbers-simple (cdr L))))
    )
   )
-
-(display (number? '1))
-(display (number? '()))
-         
