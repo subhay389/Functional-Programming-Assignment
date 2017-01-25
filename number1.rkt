@@ -62,13 +62,13 @@
 
 
 ;final reverse function
-(define (rev1 list1)
+(define (reverse-general L)
   (COND
-   ((null? list1)'())
+   ((null? L)'())
    (ELSE
-    (IF (LIST? (CAR list1))
-       (append (rev1 (cdr list1)) (list (rev1 (car list1))))
-    (append (rev1 (cdr list1)) (list (car list1)))))
+    (IF (LIST? (CAR L))
+       (append (reverse-general (cdr L)) (list (reverse-general (car L))))
+    (append (reverse-general (cdr L)) (list (car L)))))
    )
 )
 
