@@ -51,6 +51,8 @@
 ;(define (add x y)
 ;  (+ x y)
 ;  )
+
+;test function for reversing the list only
 (define (rev list1)
   (if (null? list1)
      '()
@@ -59,14 +61,14 @@
 )
 
 
-
+;final reverse function
 (define (rev1 list1)
   (COND
    ((null? list1)'())
    (ELSE
     (IF (LIST? (CAR list1))
        (append (rev1 (cdr list1)) (list (rev1 (car list1))))
-    (append (rev (cdr list1)) (list (car list1)))))
+    (append (rev1 (cdr list1)) (list (car list1)))))
    )
 )
 
