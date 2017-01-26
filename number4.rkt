@@ -1,0 +1,15 @@
+(define (find-min L)
+  
+  (COND
+   ((NULL? L) '0)
+   ((number? (car L))
+    (if (> (CAR L) temp)
+
+        (define temp (CAR L))
+
+        )
+    )
+   (else
+    (find -min (CDRdr L)))
+   )
+  )
