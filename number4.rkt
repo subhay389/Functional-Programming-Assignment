@@ -29,21 +29,21 @@
 (define (del List num)
   (cond
     ((null? List) List)
-    (not (number? (car List)) (del (cdr List) num))
+    ((not (number? (car List))) (del (cdr List) num))
     ((not (= num (car List))) (cons (car List) (del (cdr List) num)))
-    ((= (car L) num) (del (cdr L) num))
+    ((= (car List) num) (del (cdr List) num))
     )
   )
 
         
 
- 
+;finding the minimum function 
 (DEFINE (min-above-min L1 L2)
         (COND
          ;if the list1 is empty 
          ((NULL? L1) #F)
          ;if the list2 is empty
          ((NULL? L2) (find-min L1))
-         ()
+
          )
         )
