@@ -1,15 +1,20 @@
+( define temp 0)
+(define (min-track a)
+  (define temp a)
+  (display a)
+  )
+
 (define (find-min L)
   
   (COND
    ((NULL? L) '0)
-   ((number? (car L))
-    (if (> (CAR L) temp)
+   ;ignoring non integers
+   ((not (number? (car L))) (find-min (cdr L)))
+   ((number? (car L)))
 
-        (define temp (CAR L))
-
-        )
     )
    (else
-    (find -min (CDRdr L)))
+    (find-min (CDR L)))
    )
   )
+  
