@@ -2,9 +2,11 @@
 (DEFINE (find-min L)
   
   (COND
-   ((NULL? L) 99999999999)
+   ((NULL? L) L)
    ;ignoring non integers
    ((NOT (number? (car L))) (find-min (cdr L)))
+   ;preventing to compare a number with a non number 
+   ((not(number? (find-min(cdr L)))) (car L))
    ;base case for returning
    ((NULL? (cdr L)) (car L))
    ;recursion to compare all elemtns in list 
@@ -15,6 +17,19 @@
    )
   )
 
+(DEFINE list_max '())
+
+(DEFINE (find-max L min_num)
+        (COND
+         ((> (car L) min_num) (CONS (car l) list_max))
+         )
+        (display list_max)
+        )
+
+        
+        
+
+ 
 (DEFINE (min-above-min L1 L2)
         (COND
          ;if the list1 is empty 
@@ -23,8 +38,3 @@
          ((NULL? L2) (find-min L1))
          )
         )
-
-
-
-
- 
