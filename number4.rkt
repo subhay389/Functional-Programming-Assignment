@@ -17,16 +17,24 @@
    )
   )
 
-(DEFINE list_max '())
+;(DEFINE list_max '())
 
-(DEFINE (find-max L min_num)
-        (COND
-         ((> (car L) min_num) (CONS (car l) list_max))
-         )
-        (display list_max)
-        )
+;(DEFINE (find-max L min_num)
+;        (COND
+;         ((> (car L) min_num) (CONS (car l) list_max))
+;         )
+;        (display list_max)
+;        )
 
-        
+(define (del List num)
+  (cond
+    ((null? List) List)
+    (not (number? (car List)) (del (cdr List) num))
+    ((not (= num (car List))) (cons (car List) (del (cdr List) num)))
+    ((= (car L) num) (del (cdr L) num))
+    )
+  )
+
         
 
  
@@ -36,5 +44,6 @@
          ((NULL? L1) #F)
          ;if the list2 is empty
          ((NULL? L2) (find-min L1))
+         ()
          )
         )
