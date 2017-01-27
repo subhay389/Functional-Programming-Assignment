@@ -26,6 +26,8 @@
 ;        (display list_max)
 ;        )
 
+
+;helper function to delete the number from a list 
 (define (del List num)
   (cond
     ((null? List) List)
@@ -44,6 +46,9 @@
          ((NULL? L1) #F)
          ;if the list2 is empty
          ((NULL? L2) (find-min L1))
-
+         ((> (find-min L1) (find-min L2)) (find-min L1))
+         ;this function is called to delete the minimum of the list L1
+         ;because it is not bigger than the smallest of L2
+         (else (min-above-min (del L1 (find-min L1)) L2))
          )
         )
